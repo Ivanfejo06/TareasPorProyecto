@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="seccion">
+        <div>
+            <h1>Proyectos - List</h1>
+            <div class="header">
+                <!-- Elementos para agregar proyecto -->
+                <input type="text" id="nombreProyecto" placeholder="Nombre del proyecto">
+                <input type="text" id="descripcionProyecto" placeholder="Descripción del proyecto (opcional)">
+                <button onclick="agregarProyecto()">Agregar Proyecto</button>
+            </div>
+            <div class="header">
+                <!-- Elementos para agregar tarea a proyecto existente -->
+                <input type="text" id="proyectoId" placeholder="Nombre del proyecto">
+                <input type="text" id="descripcionTarea" placeholder="Descripción de la tarea">
+                <input type="date" id="fechaVencimiento" placeholder="Fecha de vencimiento (opcional)">
+                <button onclick="agregarTareaAProyecto()">Agregar Tarea a Proyecto</button>
+            </div>
+            <div class="header">
+                <!-- Elemento para mostrar tareas de un proyecto -->
+                <input type="text" id="proyectoIdMostrar" placeholder="Nombre del proyecto">
+                <button onclick="mostrarTareasDeProyecto()">Mostrar Tareas de Proyecto</button>
+            </div>
+        </div>
+        <p id="resultado"></p>
+        <ul id="lista"></ul>
+    </section>
+
+    <script src="js.js"></script>
+</body>
+</html>
