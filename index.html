@@ -8,24 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="seccion">
-        <div>
+    <section class="container">
+        <div class="content">
             <h1>Proyectos - List</h1>
-            <div class="header">
+            <div class="input-section">
                 <!-- Elementos para agregar proyecto -->
-                <input type="text" id="nombreProyecto" placeholder="Nombre del proyecto">
-                <input type="text" id="descripcionProyecto" placeholder="Descripción del proyecto (opcional)">
-                <button onclick="agregarProyecto()">Agregar Proyecto</button>
+                <input type="text" id="nombreProyecto" class="input-field" placeholder="Nombre del proyecto">
+                <input type="text" id="descripcionProyecto" class="input-field" placeholder="Descripción del proyecto (opcional)">
+                <button onclick="agregarProyecto()" class="btn">Agregar Proyecto</button>
             </div>
-            <div class="header">
+            <div class="input-section">
                 <!-- Elemento para mostrar tareas de un proyecto -->
-                <input type="text" id="proyectoId" placeholder="Nombre del proyecto">
-                <input type="date" id="fechaVencimiento" placeholder="Fecha de vencimiento">
-                <button onclick="mostrarTareasPorFechaDeVencimiento()">Buscar Por Fecha</button>
+                <input type="text" id="proyectoId" class="input-field" placeholder="Nombre del proyecto">
+                <input type="date" id="fechaVencimiento" class="input-field" placeholder="Fecha de vencimiento">
+                <button onclick="mostrarTareasPorFechaDeVencimiento()" class="btnbl">Buscar Por Fecha</button>
             </div>
         </div>
         <p id="resultado"></p>
-        <ul id="lista"></ul>
+        <ul id="lista" class="project-list"></ul>
     </section>
 
     <script src="js.js"></script>

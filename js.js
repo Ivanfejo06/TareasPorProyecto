@@ -31,12 +31,14 @@ function mostrarListaProyectos() {
         inputHidden.id = "idProyecto";
 
         buttonMostrarTareas.textContent = "Mostrar Tareas";
+        buttonMostrarTareas.className = "btnbl";
         buttonMostrarTareas.addEventListener("click", function() {
             const proyectoId = inputHidden.value;
             mostrarTareasDeProyecto(proyectoId);
         });
 
         buttonAgregarTarea.textContent = "Agregar Tarea";
+        buttonAgregarTarea.className = "btn";
         buttonAgregarTarea.addEventListener("click", function() {
             const proyectoId = inputHidden.value;
             const nombreTarea = nombreTareaInput.value;

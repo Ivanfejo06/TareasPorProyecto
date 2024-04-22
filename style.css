@@ -1,0 +1,99 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #616161; /* Cambio de color de fondo a gris */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    margin-bottom: 20px;
+}
+
+.input-section {
+    margin-bottom: 10px;
+}
+
+.input-field {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btnbl {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btnbl:hover {
+    background-color: #0056b3;
+}
+
+.btn {
+    padding: 8px 20px;
+    background-color: #4dbe4d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3c913c;
+}
+
+.project-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.project-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos para la lista de proyectos y tareas */
+.project-list li {
+    background-color: #f5f5f5; /* Cambio de color de fondo */
+    border: 1px solid #ccc; /* Cambio de color del borde */
+    border-radius: 8px; /* Aumento del radio del borde */
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.project-list li p {
+    margin-bottom: 10px;
+}
+
+.project-list li input[type="text"],
+.project-list li input[type="date"] {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
