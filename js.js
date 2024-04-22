@@ -150,8 +150,8 @@ function mostrarTareasDeProyecto(nombreProyecto) {
 
     // Limpiar el resultado anterior
     document.getElementById("resultado").innerHTML = "";
-    nombreP.textContent = nombreProyecto;
-    lii.appendChild(nombreP);
+    nombreP.textContent = "Proyecto: " + nombreProyecto;
+    document.getElementById("resultado").appendChild(nombreP);
 
     // Construir la lista de tareas del proyecto y agregarlas debajo del proyecto correspondiente
     proyecto.tareas.forEach(tarea => {
@@ -178,9 +178,8 @@ function mostrarTareasDeProyecto(nombreProyecto) {
         li.appendChild(Estado);
         li.appendChild(Venc);
         li.appendChild(buttonEstado);
-        lii.appendChild(li);
+        document.getElementById("resultado").appendChild(li);
     });
-    document.getElementById("resultado").appendChild(lii);
 }
 
 function mostrarTareasPorFechaDeVencimiento() {
@@ -206,14 +205,52 @@ function mostrarTareasPorFechaDeVencimiento() {
         return;
     }
 
+    // Crear un elemento para mostrar las tareas
+    const listaTareasElement = document.createElement("div");
+    listaTareasElement.classList.add("proyecto-tareas");
+
+    // Mostrar el nombre del proyecto
+    const nombreProyectoElement = document.createElement("h3");
+    nombreProyectoElement.textContent = "Proyecto: " + proyecto.nombre;
+    listaTareasElement.appendChild(nombreProyectoElement);
+
     // Construir la lista de tareas con la fecha de vencimiento especificada
-    let listaTareas = "";
     tareasConFechaVencimiento.forEach(tarea => {
-        listaTareas += "Nombre: " + tarea.nombre + " | Descripción: " + tarea.descripcion + " | Estado: " + tarea.estado + " | Fecha de Vencimiento: " + (tarea.fechaVencimiento || "N/A") + "<br>";
+        const tareaElement = document.createElement("li");
+        tareaElement.classList.add("tarea");
+
+        const nombreElement = document.createElement("p");
+        nombreElement.textContent = "Nombre: " + tarea.nombre;
+
+        const descripcionElement = document.createElement("p");
+        descripcionElement.textContent = "Descripción: " + tarea.descripcion;
+
+        const estadoElement = document.createElement("p");
+        estadoElement.textContent = "Estado: " + tarea.estado;
+
+        const vencimientoElement = document.createElement("p");
+        vencimientoElement.textContent = "Fecha de Vencimiento: " + (tarea.fechaVencimiento || "N/A");
+
+        const cambiarEstadoButton = document.createElement("button");
+        cambiarEstadoButton.textContent = "Cambiar Estado";
+        cambiarEstadoButton.className = "btn";
+        cambiarEstadoButton.addEventListener("click", function() {
+            CambiarEstadoTarea(tarea.nombre);
+        });
+
+        tareaElement.appendChild(nombreElement);
+        tareaElement.appendChild(descripcionElement);
+        tareaElement.appendChild(estadoElement);
+        tareaElement.appendChild(vencimientoElement);
+        tareaElement.appendChild(cambiarEstadoButton);
+
+        listaTareasElement.appendChild(tareaElement);
     });
 
-    // Mostrar las tareas del proyecto con la fecha de vencimiento especificada
-    document.getElementById("resultado").innerHTML = "Tareas del proyecto '" + proyecto.nombre + "' con fecha de vencimiento '" + fechaVencimiento + "':<br>" + listaTareas;
+    // Reemplazar el contenido anterior con el nuevo contenido
+    const resultadoElement = document.getElementById("resultado");
+    resultadoElement.innerHTML = "";
+    resultadoElement.appendChild(listaTareasElement);
 }
 
 function CambiarEstadoTarea(nombre){
